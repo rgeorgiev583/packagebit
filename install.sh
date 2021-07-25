@@ -9,3 +9,6 @@ install -D -m 755 pbcon.sh /usr/local/bin/pbcon
 for backend in *.backend.sh; do
 	install -D -m 644 "$backend" "/usr/local/share/PackageBit/$backend"
 done
+
+install -D -m 644 pacman.backend.sh /usr/local/share/PackageBit/yay.backend.sh
+sed -i 's/cmd=pacman/cmd=yay/' /usr/local/share/PackageBit/yay.backend.sh
